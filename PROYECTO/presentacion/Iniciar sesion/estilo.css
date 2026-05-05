@@ -1,0 +1,105 @@
+body{
+    font-family: Arial,sans-serif; 
+    background: #a5a79b;}
+
+.franja{
+    position:fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(92, 86, 86, 0.8);
+    color: #ddd;
+    overflow: hidden;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border-top: 2px solid orange;
+}
+
+.texto{
+    white-space: nowrap;
+    padding-left: 100%;
+    animation: mover 12s linear infinite;
+}
+
+@keyframes mover {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+.container{ 
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+
+}
+
+.box{
+    background: white;
+    padding: 40px;
+    width: 350px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.logo{
+    display: block;
+    margin: 0 auto 15px;
+    width: 120px;
+}
+
+h2{ 
+    margin-bottom: 20px;
+}
+
+input{
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    background: black;
+    color: white;
+    border: none;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background: #333;
+}
+
+.divider{
+    margin: 20px 0;
+    color: #777;
+    font-size: 14px;
+}
+
+.social-login{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.link{
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.search input{
+    width: 400px;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+
+}
