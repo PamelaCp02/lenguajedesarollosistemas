@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Registro</title>
+        <link rel="stylesheet" href="estilos.css">
+        <script src="https://accounts.google.com/gsi/client" async defer></script>
+    </head>
+    <body>
+
+        <div class="container">
+
+            <div class="box">
+                <h2> Crear Cuenta</h2>
+
+                <form action="registro.pnp" method="post">
+                    <input type="text" name="nombre" placeholder="Nombre completo" required>
+                    <input type="email" name="correo" placeholder="Correo electronico" requerid>
+                    <input type="password" name="password" placeholder="Contraseña" required>
+                    <input type="password" name="confirmar" placeholder="Confirmar contraseña" required>
+
+                    <button type="submit"> REGISTRARSE</button>
+                </form>
+
+                <P class="divider">o Registrate con</P>
+
+               
+
+              <div id="g_id_onload" data-client_id="977483775759-cedumj773fmd80vtpn5bnpa0lm5rnulg.apps.googleusercontent.com"
+                data-callback="handleCredentialResponse">
+            </div>
+            
+            <div class="g_id_signin" data-type="standard"></div>
+            
+            <script>
+                // Función que se ejecuta cuando el usuario se loguea con éxito
+                function handleCredentialResponse(response) {
+                    console.log("Token JWT codificado: " + response.credential);
+
+                    // Aquí normalmente enviarías 'response.credential' a tu servidor backend
+                    // para validarlo y crear la sesión del usuario.
+                    alert("¡Inicio de sesión exitoso! Revisa la consola.");
+                }
+            </script>
+
+                <a href="#" class="facebook-btn"> Continuar con facebook</a>
+
+                <p class="link">
+                    ¿Ya tienes cuenta? <a href="login.html"> Iniciar sesión</a>
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

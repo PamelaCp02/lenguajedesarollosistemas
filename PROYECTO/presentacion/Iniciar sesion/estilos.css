@@ -1,0 +1,77 @@
+body{
+    font-family: arial, sans-serif;
+    background: #a5a79b;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+.box{
+    background: white;
+    padding: 40px;
+    width: 350px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+h2{
+    margin-bottom: 20px;
+}
+
+input{
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button{
+    width: 100%;
+    padding: 12px;
+    background: black;
+    color: white;
+    border: none;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+button:hover{
+    background: #333;
+}
+
+.divider{
+    margin: 15px 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.google-btn{
+    display: block;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 5px 0;
+    text-decoration: none;
+    color: black;
+    border-radius: 5px;
+}
+
+.facebook-btn{
+    display: block;
+    background: #1877f2;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.link{
+    margin-top: 15px;
+    font-size: 14px;
+}

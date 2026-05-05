@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es"
+<head>
+    <meta charset="UTF-8">
+<title>Login </title>
+<link rel="stylesheet" href="estilo.css">
+ <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+
+<body>
+<div class="franja">
+    <div class="texto"> 🔥🔥 Bienvenidos a UnderStreet - Tu estilo urbano empieza aqui🔥🔥</div>
+</div>
+
+<div class="container">
+    <div class="box">
+ <img src="logo.png" alt="logo" class="logo">       
+<h2>Iniciar Sesión</h2>
+
+<form action="logo.jpeg" method="post">
+    <input type="text" placeholder=" Usuario " required>
+<input type="password" placeholder=" Contraseña" required>
+<button onclick="window.location.href='../asesoria/inicio.html'">INICIAR SESIÓN </button>
+</form>
+<p class="divider">o continuar con </p>
+
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+        apiKey: "AIzaSyATLtwMs26U8-PCI8VBCOwj7xeGFCYQn8I",
+        authDomain: "understreet-73540.firebaseapp.com",
+        projectId: "understreet-73540",
+        storageBucket: "understreet-73540.firebasestorage.app",
+        messagingSenderId: "977483775759",
+        appId: "1:977483775759:web:e1d860c929c22ce3a4487a",
+        measurementId: "G-1PBJQ6RTZE"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+</script>
+
+
+    <div id="g_id_onload" data-client_id="977483775759-cedumj773fmd80vtpn5bnpa0lm5rnulg.apps.googleusercontent.com"
+        data-callback="handleCredentialResponse">
+    </div>
+    
+    <div class="g_id_signin" data-type="standard"></div>
+    
+    <script>
+        // Función que se ejecuta cuando el usuario se loguea con éxito
+        function handleCredentialResponse(response) {
+            console.log("Token JWT codificado: " + response.credential);
+
+            // Aquí normalmente enviarías 'response.credential' a tu servidor backend
+            // para validarlo y crear la sesión del usuario.
+            alert("¡Inicio de sesión exitoso! Revisa la consola.");
+        }
+    </script>
+
+    
+        <button onclick="loginConFacebook()">Iniciar sesión con Facebook</button>
+    
+        <script>
+            // Inicializar el SDK de Facebook
+            window.fbAsyncInit = function () {
+                FB.init({
+                    appId: 'TU_APP_ID_DE_FACEBOOK',
+                    cookie: true,  // Habilita las cookies para que el servidor acceda a la sesión
+                    xfbml: true,  // Analiza los plugins sociales en esta página
+                    version: 'v18.0' // Usa la versión más reciente de la API
+                });
+            };
+
+            // Cargar el SDK de forma asíncrona
+            (function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "https://connect.facebook.net/es_LA/sdk.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+
+            // Función para disparar el login
+            function loginConFacebook() {
+                FB.login(function (response) {
+                    if (response.authResponse) {
+                        console.log('¡Inicio de sesión exitoso!');
+                        // Obtener datos del usuario
+                        FB.api('/me', { fields: 'name,email' }, function (userData) {
+                            console.log('Nombre: ' + userData.name);
+                            console.log('Email: ' + userData.email);
+                            alert("Bienvenido, " + userData.name);
+                        });
+                    } else {
+                        console.log('El usuario canceló el inicio de sesión o no lo autorizó.');
+                    }
+                }, { scope: 'public_profile,email' }); // Permisos que solicitas
+            }
+        </script>
+    
+    </body>
+    
+    </html>
+    
+   
+<p class="link">¿No tienes cuenta? <a href="registrarse.html"> Registrate </a></p>
+
+</body>
+</html>
